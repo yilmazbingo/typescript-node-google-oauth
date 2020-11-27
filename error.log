@@ -1,0 +1,7 @@
+{"statusCode":500,"reason":"Error connecting to database","level":"error","service":"user-service"}
+{"statusCode":400,"level":"error","service":"user-service"}
+{"name":"TokenError","message":"Bad Request","code":"invalid_grant","status":500,"level":"error","service":"user-service"}
+{"name":"TokenError","message":"Bad Request","code":"invalid_grant","status":500,"level":"error","service":"user-service"}
+{"name":"TokenError","message":"Bad Request","code":"invalid_grant","status":500,"level":"error","service":"user-service"}
+{"name":"TokenError","message":"Bad Request","code":"invalid_grant","status":500,"level":"error","service":"user-service"}
+{"name":"TokenError","message":"Bad Request","code":"invalid_grant","status":500,"level":"error","service":"user-service"}
