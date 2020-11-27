@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "engines": {
-    "node": "v10.21.0"
+    "node": "v10.21.0",
+    "npm": "6.x"
   },
   "scripts": {
     "start:dev": "node -r dotenv/config  build/bundle.js",
