@@ -12,7 +12,7 @@
     "dev:build": "webpack",
     "dev:start": "nodemon --watch build  --exec \"node -r dotenv/config  build/bundle.js \" ",
     "dev": "npm-run-all --parallel dev:*",
-    "start": "node build/bundle.js"
+    "start": "node --max-old-space-size=8192 build/bundle.js"
   },
   "keywords": [],
   "author": "",
