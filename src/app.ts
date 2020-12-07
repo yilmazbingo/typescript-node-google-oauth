@@ -1,7 +1,9 @@
+import path from "path";
 import express from "express";
 import cookieSession from "cookie-session";
 import passport from "passport";
 import bodyParser from "body-parser";
+import favicon from "serve-favicon";
 import cors from "cors";
 import { authRoutes } from "./routes/authRoutes";
 import { bookRoutes } from "./routes/bookRoutes";
@@ -11,9 +13,11 @@ const app = express();
 // app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(express.static("public"));
+// app.use(favicon(path.join(__dirname, "..", "public", "favicon.ico")));
 
 app.use(cors());
-app.use("/images", express.static("images"));
+// app.use("/images", express.static("images"));
 
 // request comes in cookie session first and cookieSession extracts the cookie. then cookie will be passed to passport. passport will use the storedId to get the user from db. this user will be added to 'req.user'
 // cookieSession adds user to req object
@@ -33,20 +37,30 @@ authRoutes(app);
 bookRoutes(app);
 
 app.get("/", (req, res) => {
-  let adminContent = ` <div>
-    <h1>This api set up to handle ssr</h1>
-    <a href="/auth/google">the Authentication Route</a>. You could
-    <a href="/api/books">Book Route</a>. You could
-
-    also look at details about yourself at <a href="/current_user">the Current User route</a>
-  </div>`;
+  let adminContent = `  <html>
+  <head>
+    <link rel="stylesheet" href="/styles.css">
+  </head>
+  <body>
+    <section>
+    <div>
+    <h2>My Course Goal</h2>
+      <p>This api is set for </p>
+    </div>
+      
+    </section>
+      <section >
+      <a href="/auth/google">      <button >Google-Oauth-Authentication</button>
+      </a>
+      </section>
+      
+  </body>
+</html>`;
 
   res.send(`
-    <div>
-      <div>
+    
 ${adminContent}
-      </div>
-    </div>
+     
   `);
 });
 

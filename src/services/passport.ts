@@ -23,14 +23,14 @@ passport.use(
     {
       clientID: process.env.GOOGLE_CLIENT_ID!,
       clientSecret: process.env.GOOGLE_CLIENT_SECRET!,
-      callbackURL: "/auth/google/callback",
-      // proxy: true,
+      callbackURL: "http://localhost:4500/auth/google/callback",
+      proxy: true,
     },
     // this is called when user is redirected back to our app
     async (accessToken, refreshToken, profile, done) => {
       const existingUser = await User.findOne({ googleId: profile.id });
       if (existingUser) {
-        return done(undefined, existingUser);
+        done(undefined, existingUser);
       }
       const user = await new User({ googleId: profile.id }).save();
       done(undefined, user);

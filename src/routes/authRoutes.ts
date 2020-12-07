@@ -2,21 +2,6 @@ import passport from "passport";
 import { Application, Request, Response } from "express";
 
 export const authRoutes = (app: Application) => {
-  // app.get(
-  //   "/auth/google",
-  //   passport.authenticate("google", {
-  //     scope: ["profile", "email"],
-  //   })
-  // );
-
-  // app.get(
-  //   "/auth/google/callback",
-  //   passport.authenticate("google"),
-  //   (req: Request, res: Response) => {
-  //     res.redirect("/");
-  //   }
-  // );
-
   app.get(
     "/auth/google",
     passport.authenticate("google", {
@@ -27,7 +12,7 @@ export const authRoutes = (app: Application) => {
   app.get(
     "/auth/google/callback",
     passport.authenticate("google"),
-    (req, res) => {
+    (req: Request, res: Response) => {
       res.redirect("/");
     }
   );

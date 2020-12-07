@@ -1,0 +1,1 @@
+Make sure you enable "Google+" api in "https://console.developers.google.com/". it took a week for me to figure out the issue in my app.
