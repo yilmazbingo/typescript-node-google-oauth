@@ -14,7 +14,7 @@ const app = express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
-// app.use(favicon(path.join(__dirname, "..", "public", "favicon.ico")));
+app.use(favicon(path.join(__dirname, "..", "public", "favicon.ico")));
 
 app.use(cors());
 // app.use("/images", express.static("images"));
