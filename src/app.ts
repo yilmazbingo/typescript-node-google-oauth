@@ -40,9 +40,6 @@ app.use(
 app.use(passport.initialize());
 app.use(passport.session());
 
-authRoutes(app);
-bookRoutes(app);
-
 app.get("/", (req, res) => {
   let adminContent = `  <html>
   <head>
@@ -81,7 +78,8 @@ ${adminContent}
      
   `);
 });
-
+authRoutes(app);
+bookRoutes(app);
 app.use(errorHandler);
 app.listen(process.env.PORT, () => {
   console.log(`listenint at ${process.env.PORT} `);
