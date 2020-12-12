@@ -1,5 +1,4 @@
 import "./database";
-import "./services/passport";
 import "./app";
 
 if (

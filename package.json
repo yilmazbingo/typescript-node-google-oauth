@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "engines": {
-    "node": "v10.21.0",
-    "npm": "6.x"
+    "node": "v14.15.1",
+    "npm": "6.14.8"
   },
   "scripts": {
     "start:dev": "node -r dotenv/config  build/bundle.js",
@@ -25,6 +25,7 @@
     "@types/passport": "^1.0.4",
     "@types/passport-google-oauth20": "^2.0.4",
     "@types/serve-favicon": "^2.5.2",
+    "@types/simple-icons": "^2.5.0",
     "nodemon": "^2.0.6",
     "npm-run-all": "^4.1.5",
     "typescript": "^4.0.5",
@@ -53,6 +54,7 @@
     "regenerator-runtime": "^0.13.7",
     "serialize-javascript": "^5.0.1",
     "serve-favicon": "^2.5.0",
+    "simple-icons": "^4.1.0",
     "style-loader": "^2.0.0",
     "ts-loader": "^8.0.11",
     "webpack": "^5.5.1",

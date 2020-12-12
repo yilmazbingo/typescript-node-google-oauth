@@ -8,6 +8,8 @@ import cors from "cors";
 import { authRoutes } from "./routes/authRoutes";
 import { bookRoutes } from "./routes/bookRoutes";
 import { errorHandler } from "./middlewares/error-handler";
+import "./services/passport";
+
 const app = express();
 
 // app.use(bodyParser.urlencoded({ extended: false }));
@@ -44,6 +46,17 @@ app.get("/", (req, res) => {
   <head>
     <link rel="stylesheet" href="/styles.css">
   </head>
+  <header> 
+  <div class="header">
+  <ul>
+  <li> <a href="/auth/current_user">Current User</a> </li>
+   <li><a href="https://github.com/yilmazbingo/typescript-node-google-oauth" target="_blank"> 
+      <img height="32" width="32" src="https://cdn.jsdelivr.net/npm/simple-icons@v4/icons/github.svg" /> </a>
+   </li>
+  <li> <a href="/auth/logout">Logout</a> </li>
+  </ul>
+  </div>
+  </header>
   <body>
     <section>
     <div>
