@@ -16,6 +16,8 @@ const app = express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
+app.use(express.static("build"));
+
 app.use(
   "/favicon.ico",
   favicon(path.join(__dirname, "..", "public", "favicon.ico"))
