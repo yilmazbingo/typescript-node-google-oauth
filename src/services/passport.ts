@@ -23,7 +23,8 @@ passport.use(
     {
       clientID: process.env.GOOGLE_CLIENT_ID!,
       clientSecret: process.env.GOOGLE_CLIENT_SECRET!,
-      callbackURL: "http://localhost:4500/auth/google/callback",
+      callbackURL:
+        "https://typescript-google-oauth.herokuapp.com/auth/google/callback",
       proxy: true,
     },
     // this is called when user is redirected back to our app
